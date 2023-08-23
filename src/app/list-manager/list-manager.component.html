@@ -1,0 +1,9 @@
+<p>List</p>
+<table>
+  <tr *ngFor="let item of todoList, let index = index">
+    <app-todo-item [item]="item" [index]="index"
+      (update) = "updateItem($event)"
+      (remove) = "deleteItem($event)" ></app-todo-item>
+  </tr>
+</table>
+<app-demo (submit)="addItem($event)"></app-demo>
